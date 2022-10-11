@@ -1,8 +1,9 @@
-def showNumbers(numbers):
-    for number in numbers:
-        if number%2 == 0:
-            print(number)
+def CheckNumber(number:int) -> bool:
+    return number%2 == 0
 
-listNumbers = [2,34,15,19,4,16,26,65,36,23]
+isEven = CheckNumber(8)
 
-showNumbers(listNumbers)
+if isEven:
+    print("Liczba parzysta")
+else:
+    print("Liczba nieparzysta")

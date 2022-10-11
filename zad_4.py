@@ -1,10 +1,4 @@
-def showNumbers(numbers):
-    counter = 1
-    for number in numbers:
-        if counter%2 == 0:
-            print(number)
-        counter += 1
+def checkNumbers(number1:int, number2:int, number3:int) -> bool:
+    return (number1 + number2) >= number3
 
-listNumbers = [2,34,15,19,4,16,26,65,36,23]
-
-showNumbers(listNumbers)
+print(checkNumbers(3,1,5))
