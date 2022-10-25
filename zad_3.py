@@ -1,5 +1,6 @@
-def CheckNumber(number:int) -> bool:
-    return number%2 == 0
+def CheckNumber(number: int) -> bool:
+    return number % 2 == 0
+
 
 isEven = CheckNumber(8)
 
