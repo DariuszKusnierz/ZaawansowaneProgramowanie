@@ -1,5 +1,6 @@
 from flask_restful import Resource
 
+
 class Movie(Resource):
     def __init__(self, id, title, genres) -> None:
         self.id = id
@@ -11,7 +12,6 @@ def downloadMoviesData(fileCSV):
     data = []
     with open(fileCSV, "r", encoding="utf-8") as content:
         for line in content:
-            #data.append(tuple(line.split(",")))
             splittedData = line.split(",")
-            data.append(Movie(splittedData[0],splittedData[1],splittedData[2]).__dict__)
+            data.append(Movie(splittedData[0], splittedData[1], splittedData[2]).__dict__)
     return data
