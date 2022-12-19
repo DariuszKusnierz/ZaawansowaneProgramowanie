@@ -11,10 +11,10 @@ hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 #opts = {'HitThreshold',1.4, 'WinStride',[8,8], 'Padding',[0,0], 'Scale',1.05, 'FinalThreshold',8}
 
 
-def CheckImage(image):
+def CheckImage(userImg):
     # Reading the Image 
-    image = cv2.imread('example4.jpg') 
-    con_img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    image = cv2.imread(userImg) 
+    #con_img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     # Resizing the Image 
     image = imutils.resize(image, width=min(600, image.shape[1])) 
    
@@ -31,7 +31,7 @@ def CheckImage(image):
   
     # Displaying the output Image 
     #return image
-    cv2.imwrite("IMG/img.jpg", image)
+    cv2.imwrite("static/IMG/img.jpg", image)
     #cv2.imshow("Image", image) 
     #cv2.waitKey(0)
 

@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 
 app.config["IMG_DIRECTORY"] = imgDirectory
+imgPath = os.path.join(app.config["IMG_DIRECTORY"], "img.jpg")
 
 
 @app.route('/')
@@ -17,11 +18,10 @@ def index():
 @app.route("/img", methods=["POST"])
 def FindPeople():
     if request.method == 'POST':
-        image = request.form.get('img')
-        findPerson.CheckImage(image)
-
-        img = os.path.join(app.config["IMG_DIRECTORY"], "img.jpg")
-        return render_template("img.html", user_image=img)
+        image = request.files['img']
+        image.save(imgPath)
+        findPerson.CheckImage(image.filename)
+        return render_template("img.html", user_image=imgPath)
 
 
 if __name__ == '__main__':
