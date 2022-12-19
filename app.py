@@ -9,7 +9,6 @@ app = Flask(__name__)
 app.config["IMG_DIRECTORY"] = imgDirectory
 
 
-
 @app.route('/')
 def index():
     return render_template("index.html")
