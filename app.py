@@ -18,10 +18,13 @@ def index():
 @app.route("/img", methods=["POST"])
 def FindPeople():
     if request.method == 'POST':
-        image = request.files['img']
-        image.save(imgPath)
-        findPerson.CheckImage(image.filename)
-        return render_template("img.html", user_image=imgPath)
+        if "img" in request.files and request.files["img"].filename != "":
+            image = request.files["img"]
+            image.save(imgPath)
+            findPerson.CheckImage(image.filename)
+            return render_template("img.html", user_image=imgPath)
+        else:
+            return index()
 
 
 if __name__ == '__main__':
