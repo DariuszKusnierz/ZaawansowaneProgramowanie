@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<title> {% block title%}{% endblock %} - Flask</title>
+<title> ZP-Person-Detection</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
 {% block content %}
+<div class="container">
+    <h2> Wykrywanie osób na zdjęciach</h2>
     <form method="post" action="img" enctype=multipart/form-data>
-        <label for="img">Prześlij zdjęcie do zbadania</label>
+        <label for="img">Wybierz zdjęcie do sprawdzenia</label><br/>
         <input name="img" id="img" type="file">
-        <input type="submit">
+        <input type="submit" value="Sprawdź">
     </form>
+</div>
 {% endblock %}
