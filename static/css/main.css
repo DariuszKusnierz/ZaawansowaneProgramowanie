@@ -26,3 +26,18 @@ h2{
 input{
     margin-top: 10px;
 }
+
+a{
+    display: block;
+    padding: 3px;
+    text-decoration: none;
+    color: black;
+    border: solid black 1px;
+    border-radius: 5px;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+a:hover{
+    background-color: grey;
+}
