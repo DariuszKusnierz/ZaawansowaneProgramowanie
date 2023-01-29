@@ -4,7 +4,14 @@
 
 {% block content %}
 <div class="container">
+    <h2> Wykrywanie osób na zdjęciach</h2>
+    <form method="post" action="img" enctype=multipart/form-data>
+        <label for="img">Wybierz zdjęcie do sprawdzenia</label><br/>
+        <input name="img" id="img" type="file">
+        <input type="submit" value="Sprawdź">
+    </form>
+    <br/>
     <img src="{{ user_image }}" alt="error">
-    <a href="/">Powrót</a>
+    <h3>Wykryta liczba osób: {{ persons }}</h3>
 </div>
 {% endblock %}

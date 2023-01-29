@@ -1,5 +1,5 @@
 import findPerson
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template
 import os
 
 imgDirectory = os.path.join("static", "IMG")
@@ -21,8 +21,8 @@ def FindPeople():
         if "img" in request.files and request.files["img"].filename != "":
             image = request.files["img"]
             image.save(imgPath)
-            findPerson.CheckImage(image.filename)
-            return render_template("img.html", user_image=imgPath)
+            foundPersons = findPerson.CheckImage(image.filename)
+            return render_template("img.html", user_image=imgPath, persons=foundPersons)
         else:
             return index()
 

@@ -9,7 +9,7 @@ body{
     border-radius: 5px;
     margin: 0 auto;
     padding: 50px;
-    width: fit-content;
+    width: 40%;
 }
 
 form, h2{
@@ -40,4 +40,8 @@ a{
 
 a:hover{
     background-color: grey;
+}
+
+img{
+    width: 100%;
 }
